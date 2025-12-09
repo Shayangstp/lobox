@@ -1,0 +1,22 @@
+.fa-solid,
+.fa-regular,
+.fa-light,
+.fa-thin,
+.fa-duotone,
+.fa-brands {
+  font-size: 0.625rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--additional-700);
+  transition: color 0.15s ease-in-out;
+}
+
+.fa-solid:hover,
+.fa-regular:hover,
+.fa-light:hover,
+.fa-thin:hover,
+.fa-duotone:hover,
+.fa-brands:hover {
+  color: var(--additional-900);
+}

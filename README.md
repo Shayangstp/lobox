@@ -1,73 +1,37 @@
-# React + TypeScript + Vite
+# Lobox — Multi Select Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + TypeScript + SCSS project implementing a reusable multi-select component.
 
-Currently, two official plugins are available:
+## Goals & highlights
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Reusable multi-select component implemented in React + TypeScript.
+- Controlled API using `value` and `onChange`.
+- Supports creating new items via the input (press `Enter`).
+- Closes when clicking outside the component.
+- Component-level SCSS for styling.
 
-## React Compiler
+## Component behavior
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Multi-select** — selected items appear as tags.
+- **Add new items** — typing a label and pressing `Enter` creates and selects it.
+- **Search** — options list is filtered while typing.
+- **Remove tags** — each selected item has a remove button.
+- **Overflow handling** — shows up to three tags and a `+N more` badge with a tooltip.
 
-## Expanding the ESLint configuration
+## Styling
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Component is styled with SCSS.
+- Global color variables and base styles live under `src/styles/`.
+- Font Awesome is used for small icons (chevron, remove, check).
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## How to run
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Install:
+   ```sh
+   npm install
+   ```
+2. Dev:
+   ```sh
+   npm run dev
+   ```
+3. Open [http://localhost:5173](http://localhost:5173) in your browser.
